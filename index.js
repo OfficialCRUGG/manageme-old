@@ -19,6 +19,10 @@ bot.on("message", async message => {
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
+
+    if(cmd === `${prefix}invite`) {
+        return message.channel.send("An official invite is currently not avalible.\n\nYou can also grab our source code here: https://github.com/OfficialCRUGG/manageme")
+    }
 });
 
 bot.login(config.token);
