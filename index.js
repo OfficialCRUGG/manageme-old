@@ -14,6 +14,11 @@ bot.on("message", async message => {
     if(message.channel.type === "dm") {
         return message.channel.send("Commands via DMs are work in progress");
     }
+
+    let prefix = config.prefix;
+    let messageArray = message.content.split(" ");
+    let cmd = messageArray[0];
+    let args = messageArray.slice(1);
 });
 
 bot.login(config.token);
