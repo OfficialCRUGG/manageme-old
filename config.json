@@ -1,15 +1,8 @@
 {
-    //Used before all commands (e.g. ##help)
     "prefix": "##",
 
-    //Little circle status for the bot
-    //Online | Green = online
-    //Idling | Yellow = idle
-    //Do not disturb | Red = dnd
-    //Invisible | Gray + Offline = invisible
     "status": "dnd",
 
-    //Possible: PLAYING, STREAMING, LISTENING, WATCHING
     "acitivityType": "STREAMING",
     "acitivityText": "awesome vibes."
 }
