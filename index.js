@@ -6,6 +6,7 @@ const bot = new Discord.Client({disableEveryone: true})
 bot.on("ready", async () => {
     console.log(`${bot.user.username} has succesfully started!`)
     bot.user.setActivity('you!', { type: 'WATCHING'} );
+    bot.user.setStatus('dnd')
 });
 
 bot.on("message", async message => {
