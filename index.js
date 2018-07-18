@@ -1,18 +1,20 @@
 const config = require("./config.json");
+const tokenFile = require("./token.json")
+const lang_us = require("./lang/en_us.json")
 const Discord = require("discord.js");
 
 const bot = new Discord.Client({disableEveryone: true})
 
 bot.on("ready", async () => {
     console.log(`${bot.user.username} has succesfully started!`)
-    bot.user.setActivity('you!', { type: 'WATCHING'} );
-    bot.user.setStatus('dnd')
+    bot.user.setActivity(`${config.activityText}`, { type: `${config.activityType}`} );
+    bot.user.setStatus(`${config.status}`)
 });
 
 bot.on("message", async message => {
     if(message.author.bot) return;
     if(message.channel.type === "dm") {
-        return message.channel.send("Commands via DMs are work in progress");
+        return message.channel.send(`${lang_us.noDmCommands}`);
     }
 
     let prefix = config.prefix;
@@ -21,8 +23,8 @@ bot.on("message", async message => {
     let args = messageArray.slice(1);
 
     if(cmd === `${prefix}invite`) {
-        return message.channel.send("An official invite is currently not avalible.\n\nYou can also grab our source code here: https://github.com/OfficialCRUGG/manageme")
+        return message.channel.send(`${lang_us.inviteCommand}`);
     }
 });
 
-bot.login(config.token);
+bot.login(tokenFile.token);
