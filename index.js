@@ -8,4 +8,11 @@ bot.on("ready", async () => {
     bot.user.setGame("with discord.js!");
 });
 
+bot.on("message", async message => {
+    if(message.author.bot) return;
+    if(message.channel.type === "dm") {
+        return message.channel.send("Commands via DMs are work in progress");
+    }
+});
+
 bot.login(config.token);
