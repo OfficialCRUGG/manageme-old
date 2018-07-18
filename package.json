@@ -1,0 +1,22 @@
+{
+  "name": "manageme",
+  "version": "1.0.0",
+  "description": "discord.js Moderation &amp; Fun Bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OfficialCRUGG/manageme.git"
+  },
+  "author": "CRUGG",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OfficialCRUGG/manageme/issues"
+  },
+  "homepage": "https://github.com/OfficialCRUGG/manageme#readme",
+  "dependencies": {
+    "discord.js": "^11.3.2"
+  }
+}
