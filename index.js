@@ -6,7 +6,7 @@ const Discord = require("discord.js");
 const bot = new Discord.Client({disableEveryone: true})
 
 bot.on("ready", async () => {
-    console.log(`${bot.user.username} has succesfully started!`)
+    console.log(`[INFO] ${bot.user.username} has succesfully started!`)
     bot.user.setActivity(config.acitivityText, {type: config.acitivityType});
     bot.user.setStatus(`${config.status}`)
 });
