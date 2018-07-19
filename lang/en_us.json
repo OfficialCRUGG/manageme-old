@@ -1,4 +1,15 @@
 {
     "noDmCommands": "Commands via DMs are work in progress",
-    "inviteCommand": "An official invite is currently not avalible.\n\nYou can also grab our source code here: https://github.com/OfficialCRUGG/manageme"
+    "inviteCommand": "An official invite is currently not avalible, since the bot isn't anywhere near finished. The bot is also not 24/7 at the moment.\n\nYou can also grab our source code here: https://github.com/OfficialCRUGG/manageme",
+    "guildInformation": {
+        "title": " - Guild Information",
+        "info": {
+            "guildName": "Guild name",
+            "createdAt": "Created at",
+            "guildID": "Guild ID",
+            "memberCount": "Member Count",
+            "owner": "Guild Owner",
+            "region": "Server Region"
+        }
+    }
 }
