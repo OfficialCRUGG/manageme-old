@@ -11,5 +11,19 @@
             "owner": "Guild Owner",
             "region": "Server Region"
         }
+    },
+    "kick": {
+        "cantFindUser": "Sorry, but I can't find this user.",
+        "logTitle": "Kick",
+        "logUser": "User",
+        "logReason": "Reason",
+        "logModerator": "Moderator",
+        "noPerms": "You don't have permissions to use the kick command.",
+        "cantKickMods": "You can't kick other Moderators.",
+        "DM": {
+            "part1": "You we're kicked from",
+            "part2": "for the reason",
+            "part3": "by"
+        }
     }
 }

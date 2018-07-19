@@ -1,6 +1,7 @@
 const config = require("./config.json");
 const tokenFile = require("./token.json")
 const lang = require("./lang/en_us.json")
+const logChannel = config.logChannel
 const Discord = require("discord.js");
 
 const bot = new Discord.Client({disableEveryone: true})
@@ -41,7 +42,31 @@ bot.on("message", async message => {
         .addField(lang.guildInformation.info.region, message.guild.region)
 
         return message.channel.send(embed);
+    /*
+    } else if(cmd === `${prefix}kick`) {
+        let t = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+        if(!t) return message.channel.send(lang.cantFindUser);
+        let reason = args.join(" ").slice(22);
+        if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(lang.kick.noPerms)
+        if(t.hasPermission("KICK_MEMBERS")) return message.channel.send(lang.kick.cantKickMods)
+
+        let embed = new Discord.RichEmbed()
+        .setTitle(lang.kick.logTitle)
+        .setColor("#7289DA")
+        .setThumbnail(t.avatarURL)
+        .addField(lang.kick.logUser, `${t.user.username}#${t.user.discriminator}`)
+        .addField(lang.kick.logReason, reason)
+        .addField(lang.kick.logModerator, message.author)
+        message.delete();
+
+        t.user.channel.send(lang.kick.DM.part1 + " " + message.guild.guildName + " " + lang.kick.DM.part2 + " " + reason + " " + part3 + " " + message.author);
+
+        message.guild.member(t.user).kick(reason);
+        let kickLogChannel = bot.channels.get(logChannel);
+        kickLogChannel.send(embed);
+    */
     }
+    
 });
 
 bot.login(tokenFile.token);

@@ -1,0 +1,15 @@
+{
+    "noDmCommands": "Kommandon via DM är i pågående arbete",
+    "inviteCommand": "En officiell inbjudan är för närvarande inte tillänglig, eftersom boten inte är någonstans nära färdig. Boten är inte heller 24/7 för tillfället.\n\nDu kan också ta tag i vår källkod här: https://github.com/OfficialCRUGG/manageme",
+    "guildInformation": {
+        "title": " - Server Information",
+        "info": {
+            "guildName": "Servernamn",
+            "createdAt": "Skapad vid",
+            "guildID": "Server ID",
+            "memberCount": "Medlemsantal",
+            "owner": "Serverägare",
+            "region": "Server region"
+        }
+    }
+}
