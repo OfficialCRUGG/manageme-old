@@ -25,6 +25,22 @@ bot.on("message", async message => {
 
     if(cmd === `${prefix}invite`) {
         return message.channel.send(`${lang_us.inviteCommand}`);
+    } else if(cmd === `${prefix}guildinfo`) {
+        let gicon = message.guild.iconURL;
+        let gname = message.guild.name;
+        let embed = new Discord.RichEmbed()
+        .setTitle(`${gname} - Guild Information`)
+        .setColor("#7289DA")
+        .setThumbnail(gicon)
+        .setAuthor(message.author.username + "#" + message.author.discriminator, message.author.avatarURL)
+        .addField("Guild name", message.guild.name)
+        .addField("Created at", message.guild.createdAt)
+        .addField("Guild ID", message.guild.id)
+        .addField("Members", message.guild.memberCount)
+        .addField("Owner", message.guild.owner.user.username + "#" + message.guild.owner.user.discriminator)
+        .addField("Region", message.guild.region)
+
+        return message.channel.send(embed);
     }
 });
 
