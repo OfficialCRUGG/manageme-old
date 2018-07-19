@@ -58,7 +58,12 @@ bot.on("message", async message => {
         .addField(lang.kick.logModerator, message.author)
         message.delete();
 
+<<<<<<< HEAD
         t.user.dmChannel.send(lang.kick.DM.part1 + " " + message.guild.guildName + " " + lang.kick.DM.part2 + " " + reason + " " + part3 + " " + message.author)
+=======
+        t.user.dmChannel.send(lang.kick.DM.part1 + " " + message.guild.guildName + " " + lang.kick.DM.part2 + " " + reason + " " + part3 + " " + message.author);
+
+>>>>>>> f642cb81489f3c1d42e72ec07ee9af5cc0b1dafc
         message.guild.member(t.user).kick(reason);
         let kickLogChannel = bot.channels.get(logChannel);
         kickLogChannel.send(embed);
