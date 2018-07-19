@@ -42,7 +42,6 @@ bot.on("message", async message => {
         .addField(lang.guildInformation.info.region, message.guild.region)
 
         return message.channel.send(embed);
-    /*
     } else if(cmd === `${prefix}kick`) {
         let t = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
         if(!t) return message.channel.send(lang.cantFindUser);
@@ -59,14 +58,13 @@ bot.on("message", async message => {
         .addField(lang.kick.logModerator, message.author)
         message.delete();
 
-        t.user.channel.send(lang.kick.DM.part1 + " " + message.guild.guildName + " " + lang.kick.DM.part2 + " " + reason + " " + part3 + " " + message.author);
+        t.user.dmChannel.send(lang.kick.DM.part1 + " " + message.guild.guildName + " " + lang.kick.DM.part2 + " " + reason + " " + part3 + " " + message.author);
 
         message.guild.member(t.user).kick(reason);
         let kickLogChannel = bot.channels.get(logChannel);
         kickLogChannel.send(embed);
-    */
     }
-    
+
 });
 
 bot.login(tokenFile.token);
