@@ -1,0 +1,29 @@
+{
+    "noDmCommands": "Befehle via Direktnachrichten sind in Arbeit.",
+    "inviteCommand": "Ein offizieller Invite ist noch nicht möglich, da der Bot noch nicht annähernd fertig ist. Der Bot ist auch noch nicht 24/7 online im Moment.\n\nHier findest du den Source Code: https://github.com/OfficialCRUGG/manageme",
+    "guildInformation": {
+        "title": " - Server Informationen ",
+        "info": {
+            "guildName": "Server Name",
+            "createdAt": "Erstellt am",
+            "guildID": "Server ID",
+            "memberCount": "Nutzer Anzahl",
+            "owner": "Server Besitzer",
+            "region": "Server Region"
+        }
+    },
+    "kick": {
+        "cantFindUser": "Sorry, aber ich kann diesen User nicht finden.",
+        "logTitle": "Kick",
+        "logUser": "Nutzer",
+        "logReason": "Grund",
+        "logModerator": "Moderator",
+        "noPerms": "Du hast keine Berechtigungen, um den kick Befehl zu benutzen.",
+        "cantKickMods": "Du kannst keine anderen Moderatoren kicken.",
+        "DM": {
+            "part1": "You we're kicked from",
+            "part2": "for the reason",
+            "part3": "by"
+        }
+    }
+}
