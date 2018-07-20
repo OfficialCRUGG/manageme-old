@@ -42,7 +42,7 @@ bot.on("message", async message => {
         .addField(lang.guildInformation.info.region, message.guild.region)
 
         return message.channel.send(embed);
-    } else if(cmd === `${prefix}kick`) {
+    /* } else if(cmd === `${prefix}kick`) {
         let t = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
         if(!t) return message.channel.send(lang.cantFindUser);
         let reason = args.join(" ").slice(22);
@@ -65,9 +65,12 @@ bot.on("message", async message => {
           dmchannel.send(kickDM)
         });
 
-        //message.guild.member(t.user).kick(reason);
-        //let kickLogChannel = bot.channels.get(logChannel);
-        //kickLogChannel.send(embed);
+        message.guild.member(t.user).kick(reason);
+        let kickLogChannel = bot.channels.get(logChannel);
+        kickLogChannel.send(embed);*/
+    } else if(cmd = `${prefix}help`) {
+      let embed = new RichEmbed
+      .setTitle(lang.help.title)
     }
 
 });
