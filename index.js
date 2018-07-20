@@ -57,13 +57,17 @@ bot.on("message", async message => {
         .addField(lang.kick.logReason, reason)
         .addField(lang.kick.logModerator, message.author)
         message.delete();
+        kickDM = lang.kick.DM
+        kickDM.replace("{server}", message.guild.guildName);
+        kickDM.replace("{reason}", reason);
+        kickDM.replace("{moderator}", message.author);
         t.user.createDM().then(dmchannel => {
-          dmchannel.send(lang.kick.DM.part1 + " " + message.guild.guildName + " " + lang.kick.DM.part2 + " " + reason + " " + part3 + " " + message.author)
+          dmchannel.send(kickDM)
         });
 
-        message.guild.member(t.user).kick(reason);
-        let kickLogChannel = bot.channels.get(logChannel);
-        kickLogChannel.send(embed);
+        //message.guild.member(t.user).kick(reason);
+        //let kickLogChannel = bot.channels.get(logChannel);
+        //kickLogChannel.send(embed);
     }
 
 });

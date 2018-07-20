@@ -20,10 +20,6 @@
         "logModerator": "Moderator",
         "noPerms": "Du hast keine Berechtigungen, um den kick Befehl zu benutzen.",
         "cantKickMods": "Du kannst keine anderen Moderatoren kicken.",
-        "DM": {
-            "part1": "You we're kicked from",
-            "part2": "for the reason",
-            "part3": "by"
-        }
+        "DM": "You we're kicked from {server} for the Reason {reason} by {moderator}."
     }
 }
