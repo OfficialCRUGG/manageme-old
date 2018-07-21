@@ -1,10 +1,28 @@
-const config = require("./config.json");
+const config = require("./config.json")
 const tokenFile = require("./token.json")
 const lang = require("./lang/en_us.json")
 const logChannel = config.logChannel
 const Discord = require("discord.js");
-
+const fs = require("fs");
 const bot = new Discord.Client({disableEveryone: true})
+bot.commands = new Discord.Collection();
+
+fs.readdir("./commands", (err, files) => {
+  if(err) console.lor(err);
+
+  let jsfile = files.filter(f => f.split(".").pop() === "js")
+  if(jsfile.length <= 0){
+    console.log("[INFO] No commands loaded!")
+    return;
+  }
+
+jsfile.forEach((f, i) =>{
+  let props = require(`./commands/${f}`);
+  console.log(`[INFO] "${f}" loaded!`)
+  bot.commands.set(props.help.name, props)
+});
+
+});
 
 bot.on("ready", async () => {
     console.log(`[INFO] ${bot.user.username} has succesfully started!`)
@@ -23,54 +41,58 @@ bot.on("message", async message => {
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
     let author = message.author
+    let guild = message.guild
 
-    if(cmd === `${prefix}invite`) {
-        return message.channel.send(`${lang.inviteCommand}`);
-    } else if(cmd === `${prefix}guildinfo`) {
-        let gicon = message.guild.iconURL;
-        let gname = message.guild.name;
-        let embed = new Discord.RichEmbed()
-        .setTitle(gname + lang.guildInformation.title)
-        .setColor("#7289DA")
-        .setThumbnail(gicon)
-        .setAuthor(message.author.username + "#" + message.author.discriminator, message.author.avatarURL)
-        .addField(lang.guildInformation.info.guildName, message.guild.name)
-        .addField(lang.guildInformation.info.createdAt, message.guild.createdAt)
-        .addField(lang.guildInformation.info.guildID, message.guild.id)
-        .addField(lang.guildInformation.info.memberCount, message.guild.memberCount)
-        .addField(lang.guildInformation.info.owner, message.guild.owner.user.username + "#" + message.guild.owner.user.discriminator)
-        .addField(lang.guildInformation.info.region, message.guild.region)
+    let commandFile = bot.commands.get(cmd.slice(prefix.length));
+    if(commandFile) commandFile.run(prefix, messageArray, cmd, bot, message, args, author, guild, lang)
 
-        return message.channel.send(embed);
-     } else if(cmd === `${prefix}kick`) {
-        let t = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-        if(!t) return message.channel.send(lang.cantFindUser);
-        let reason = args.join(" ").slice(22);
-        if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(lang.kick.noPerms)
-        if(t.hasPermission("KICK_MEMBERS")) return message.channel.send(lang.kick.cantKickMods)
-
-        let embed = new Discord.RichEmbed()
-        .setTitle(lang.kick.logTitle)
-        .setColor("#7289DA")
-        .setThumbnail(t.avatarURL)
-        .addField(lang.kick.logUser, `${t.user.username}#${t.user.discriminator}`)
-        .addField(lang.kick.logReason, reason)
-        .addField(lang.kick.logModerator, message.author)
-        message.delete();
-        let kickDM = lang.kick.DM
-        kickDM.replace("{server}", message.guild.guildName);
-        kickDM.replace("{reason}", reason);
-        kickDM.replace("{moderator}", message.author);
-        t.user.createDM().then(dmchannel => {
-          dmchannel.send(kickDM)
-        });
-        //setTimeout(t.kick(reason), 600)
-        let kickLogChannel = bot.channels.get(logChannel);
-        //kickLogChannel.send(embed);
-    } else if(cmd = `${prefix}help`) {
-      let embed = new Discord.RichEmbed()
-      .setTitle(lang.help.title)
-    }
+    // if(cmd === `${prefix}invite`) {
+    //     return message.channel.send(`${lang.inviteCommand}`);
+    // } else if(cmd === `${prefix}guildinfo`) {
+    //     let gicon = message.guild.iconURL;
+    //     let gname = message.guild.name;
+    //     let embed = new Discord.RichEmbed()
+    //     .setTitle(gname + lang.guildInformation.title)
+    //     .setColor("#7289DA")
+    //     .setThumbnail(gicon)
+    //     .setAuthor(message.author.username + "#" + message.author.discriminator, message.author.avatarURL)
+    //     .addField(lang.guildInformation.info.guildName, message.guild.name)
+    //     .addField(lang.guildInformation.info.createdAt, message.guild.createdAt)
+    //     .addField(lang.guildInformation.info.guildID, message.guild.id)
+    //     .addField(lang.guildInformation.info.memberCount, message.guild.memberCount)
+    //     .addField(lang.guildInformation.info.owner, message.guild.owner.user.username + "#" + message.guild.owner.user.discriminator)
+    //     .addField(lang.guildInformation.info.region, message.guild.region)
+    //
+    //     return message.channel.send(embed);
+    //  } else if(cmd === `${prefix}kick`) {
+    //     let t = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    //     if(!t) return message.channel.send(lang.cantFindUser);
+    //     let reason = args.join(" ").slice(22);
+    //     if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(lang.kick.noPerms)
+    //     if(t.hasPermission("KICK_MEMBERS")) return message.channel.send(lang.kick.cantKickMods)
+    //
+    //     let embed = new Discord.RichEmbed()
+    //     .setTitle(lang.kick.logTitle)
+    //     .setColor("#7289DA")
+    //     .setThumbnail(t.avatarURL)
+    //     .addField(lang.kick.logUser, `${t.user.username}#${t.user.discriminator}`)
+    //     .addField(lang.kick.logReason, reason)
+    //     .addField(lang.kick.logModerator, message.author)
+    //     message.delete();
+    //     let kickDM = lang.kick.DM
+    //     kickDM.replace("{server}", message.guild.guildName);
+    //     kickDM.replace("{reason}", reason);
+    //     kickDM.replace("{moderator}", message.author);
+    //     t.user.createDM().then(dmchannel => {
+    //       dmchannel.send(kickDM)
+    //     });
+    //     //setTimeout(t.kick(reason), 600)
+    //     let kickLogChannel = bot.channels.get(logChannel);
+    //     //kickLogChannel.send(embed);
+    // } else if(cmd = `${prefix}help`) {
+    //   let embed = new Discord.RichEmbed()
+    //   .setTitle(lang.help.title)
+    // }
 
 });
 
