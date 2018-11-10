@@ -1,9 +1,10 @@
-# manageme
-Discord Management & Fun Bot
+# Home
 
-# How to setup?
-First you have to install the dependencies using `npm install`.
-Then you have to enter the token in the `token.json` file in the root directory of the bot.
-After that you can edit the `config.json` file to change the prefix etc.
+{% hint style="warning" %}
+The home page isn't finished yet. Use the Navigation on the left.
+{% endhint %}
 
-[![Join our Discord](https://discordapp.com/api/guilds/449982492511043625/embed.png?style=banner4)](https://discordapp.com/invite/CheqYwR)
+## 
+
+
+
