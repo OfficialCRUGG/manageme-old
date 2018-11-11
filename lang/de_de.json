@@ -12,6 +12,22 @@
             "region": "Server Region"
         }
     },
+    "userInformation": {
+        "title": " - Nutzer Informationen ",
+        "info": {
+            "userName": "Name",
+            "createdAt": "Erstellt am",
+            "userID": "Nutzer ID",
+            "status": "Status",
+            "game": "Spiel"
+        },
+        "statuses": {
+            "online": "Online",
+            "offline": "Offline",
+            "dnd": "Bitte nicht stören",
+            "idle": "Abwesend"
+        }
+    },
     "kick": {
         "cantFindUser": "Sorry, aber ich kann diesen User nicht finden.",
         "logTitle": "Kick",
