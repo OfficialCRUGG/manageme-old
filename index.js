@@ -42,7 +42,7 @@ bot.on("message", async message => {
     let args = messageArray.slice(1);
     let author = message.author
     let guild = message.guild
-    if (!message.startsWith(prefix)) return;
+    if (!message.content.startsWith(prefix)) return;
     let commandFile = bot.commands.get(cmd.slice(prefix.length));
     if(commandFile) commandFile.run(prefix, messageArray, cmd, bot, message, args, author, guild, lang)
 
