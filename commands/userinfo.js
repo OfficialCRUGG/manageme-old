@@ -1,12 +1,13 @@
 const Discord = require("discord.js");
 
-module.exports.run = async (prefix, messageArray, cmd, bot, message, args, author, guild, lang) => {
+
+module.exports.run = async (prefix, messageArray, cmd, bot, message, args, author, guild, lang, config) => {
       //let gicon = message.guild.iconURL;
       //let gname = message.guild.name;
       let user = message.mentions.users.first();
       let embed = new Discord.RichEmbed()
       embed.setTitle(user.username + lang.userInformation.title)
-      embed.setColor("#7289DA")
+      embed.setColor()
       embed.setThumbnail(user.avatarURL)
       embed.setAuthor(message.author.username + "#" + message.author.discriminator, message.author.avatarURL)
       embed.addField(lang.userInformation.info.userName, user.tag)

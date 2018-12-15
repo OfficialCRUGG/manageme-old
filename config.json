@@ -4,5 +4,7 @@
 
     "status": "dnd",
     "acitivityType": "WATCHING",
-    "acitivityText": "this guild."
+    "acitivityText": "this guild.",
+
+    "mainColor": "#7289DA"
 }

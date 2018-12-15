@@ -44,7 +44,7 @@ bot.on("message", async message => {
     let guild = message.guild
     if (!message.content.startsWith(prefix)) return;
     let commandFile = bot.commands.get(cmd.slice(prefix.length));
-    if(commandFile) commandFile.run(prefix, messageArray, cmd, bot, message, args, author, guild, lang)
+    if(commandFile) commandFile.run(prefix, messageArray, cmd, bot, message, args, author, guild, lang, config)
 
 });
 
