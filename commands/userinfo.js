@@ -7,7 +7,7 @@ module.exports.run = async (prefix, messageArray, cmd, bot, message, args, autho
       let user = message.mentions.users.first();
       let embed = new Discord.RichEmbed()
       embed.setTitle(user.username + lang.userInformation.title)
-      embed.setColor()
+      embed.setColor(config.mainColor)
       embed.setThumbnail(user.avatarURL)
       embed.setAuthor(message.author.username + "#" + message.author.discriminator, message.author.avatarURL)
       embed.addField(lang.userInformation.info.userName, user.tag)

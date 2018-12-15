@@ -5,7 +5,7 @@ module.exports.run = async (prefix, messageArray, cmd, bot, message, args, autho
       let gname = message.guild.name;
       let embed = new Discord.RichEmbed()
       .setTitle(gname + lang.guildInformation.title)
-      .setColor("#7289DA")
+      .setColor(config.mainColor)
       .setThumbnail(gicon)
       .setAuthor(message.author.username + "#" + message.author.discriminator, message.author.avatarURL)
       .addField(lang.guildInformation.info.guildName, message.guild.name)
@@ -14,7 +14,6 @@ module.exports.run = async (prefix, messageArray, cmd, bot, message, args, autho
       .addField(lang.guildInformation.info.memberCount, message.guild.memberCount)
       .addField(lang.guildInformation.info.owner, message.guild.owner.user.username + "#" + message.guild.owner.user.discriminator)
       .addField(lang.guildInformation.info.region, message.guild.region)
-
       return message.channel.send(embed);
 }
 
