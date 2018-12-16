@@ -1,6 +1,6 @@
 {
     "noDmCommands": "Befehle via Direktnachrichten sind in Arbeit.",
-    "inviteCommand": "Ein offizieller Invite ist noch nicht möglich, da der Bot noch nicht annähernd fertig ist. Der Bot ist auch noch nicht 24/7 online im Moment.\n\nHier findest du den Source Code: https://github.com/OfficialCRUGG/manageme",
+    "inviteCommand": "Du kannst den Bot aktuell nocht nicht einladen, ihn jedoch selbst hosten.\n\nAlle Veröffentlichungen: http://files.manageme.ga/manageme-bot/releases/\nNeuste Entwicklungsversion: https://github.com/mm-discord/manageme",
     "guildInformation": {
         "title": " - Server Informationen ",
         "info": {

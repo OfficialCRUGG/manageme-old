@@ -1,6 +1,6 @@
 {
     "noDmCommands": "Commands via DMs are work in progress",
-    "inviteCommand": "An official invite is currently not avalible, since the bot isn't anywhere near finished. The bot is also not 24/7 at the moment.\n\nYou can also grab our source code here: https://github.com/OfficialCRUGG/manageme",
+    "inviteCommand": "You currently can't invite the bot, but you can host it yourself.\n\nAll releases: http://files.manageme.ga/manageme-bot/releases/\nLatest development versions: https://github.com/mm-discord/manageme",
     "guildInformation": {
         "title": " - Guild Information",
         "info": {

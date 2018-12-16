@@ -1,6 +1,6 @@
 {
     "noDmCommands": "Kommandon via DM är i pågående arbete",
-    "inviteCommand": "En officiell inbjudan är för närvarande inte tillänglig, eftersom boten inte är någonstans nära färdig. Boten är inte heller 24/7 för tillfället.\n\nDu kan också ta tag i vår källkod här: https://github.com/OfficialCRUGG/manageme",
+    "inviteCommand": "You currently can't invite the bot, but you can host it yourself.\n\nAll releases: http://files.manageme.ga/manageme-bot/releases/\nLatest development versions: https://github.com/mm-discord/manageme",
     "guildInformation": {
         "title": " - Server Information",
         "info": {
