@@ -1,6 +1,5 @@
 {
     "noDmCommands": "Kommandon via DM är i pågående arbete",
-    "inviteCommand": "You currently can't invite the bot, but you can host it yourself.\n\nAll releases: <http://files.manageme.ga/manageme-bot/releases/>\nLatest development versions: <https://github.com/mm-discord/manageme>",
     "guildInformation": {
         "title": " - Server Information",
         "info": {

@@ -1,6 +1,5 @@
 {
     "noDmCommands": "Befehle via Direktnachrichten sind in Arbeit.",
-    "inviteCommand": "Du kannst den Bot aktuell nocht nicht einladen, ihn jedoch selbst hosten.\n\nAlle Veröffentlichungen: <http://files.manageme.ga/manageme-bot/releases/>\nNeuste Entwicklungsversion: <https://github.com/mm-discord/manageme>",
     "guildInformation": {
         "title": " - Server Informationen ",
         "info": {
