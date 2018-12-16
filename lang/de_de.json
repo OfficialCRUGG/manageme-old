@@ -37,5 +37,13 @@
         "noPerms": "Du hast keine Berechtigungen, um den kick Befehl zu benutzen.",
         "cantKickMods": "Du kannst keine anderen Moderatoren kicken.",
         "DM": "Du wurdest von {server} mit dem Grund {reason} von {moderator} gekickt."
-    }
+      },
+      "help": {
+        "title": "ManageMe - Hilfe",
+        "commandDescriptions": {
+          "invite": "Zeigt, wie man den Bot einlädt",
+          "guildinfo": "Zeigt Informationen über diesen Server",
+          "userinfo": "Zeigt Informationen über den **erwähnten** Nutzer"
+        }
+      }
 }

@@ -37,5 +37,13 @@
         "noPerms": "You don't have permissions to use the kick command.",
         "cantKickMods": "You can't kick other Moderators.",
         "DM": "You we're kicked from {server} for the Reason {reason} by {moderator}."
+    },
+    "help": {
+      "title": "ManageMe - Help",
+      "commandDescriptions": {
+        "invite": "Shows how to invite the bot",
+        "guildinfo": "Shows information about this guild",
+        "userinfo": "Shows information about the **mentioned** user"
+      }
     }
 }
