@@ -5,6 +5,7 @@ module.exports.run = async (prefix, messageArray, cmd, bot, message, args, autho
       //let gicon = message.guild.iconURL;
       //let gname = message.guild.name;
       let user = message.mentions.users.first();
+      if(!user) { user = message.author;}
       let embed = new Discord.RichEmbed()
       embed.setTitle(user.username + lang.userInformation.title)
       embed.setColor(config.mainColor)
